@@ -1,34 +1,40 @@
 @extends('layouts.template')
 @section('content')
     <!-- START FORM -->
-    <form action='{{ url('pengeluaran') }}' method='post'>
+    <form action='{{ url('pendapatan/' . $data->id) }}' method='post'>
         @csrf
+        @method('PUT')
         <div class="my-3 p-3 bg-body rounded shadow-sm">
-            <a href="{{ url('pengeluaran') }}" class="btn btn-secondary">
+            <a href="{{ url('pendapatan') }}" class="btn btn-secondary">
                 < Kembali</a>
                     <div class="mb-3 row">
                         <label for="tanggal" class="col-sm-2 col-form-label">Tanggal</label>
                         <div class="col-sm-10">
-                            <input type="date" class="form-control" name='tanggal' value="{{ Session::get('tanggal') }}"
-                                id="tanggal">
+                            {{ $data->tanggal }}
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="harga_pakan" class="col-sm-2 col-form-label">Harga Pakan</label>
+                        <label for="jumlah" class="col-sm-2 col-form-label">Jumlah</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name='harga_pakan'
-                                value="{{ Session::get('harga_pakan') }}" id="harga_pakan">
+                            {{ $data->jumlah }}
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="harga" class="col-sm-2 col-form-label">Harga</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name='harga' value="{{ $data->harga }}"
+                                id="harga">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="catatan" class="col-sm-2 col-form-label">Catatan</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name='catatan'
-                                value="{{ Session::get('catatan') }}"id="catatan">
+                                value="{{ $data->catatan }}"id="catatan">
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="action" class="col-sm-2 col-form-label"></label>
+                        <label for="jurusan" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10"><button type="submit" class="btn btn-primary" name="submit">SIMPAN</button>
                         </div>
                     </div>

@@ -6,12 +6,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Pengeluaran Mitra</h1>
+                        <h1 class="m-0">Pendapatan Mitra</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Pengeluaran Mitra</li>
+                            <li class="breadcrumb-item active">Pendapatan Mitra</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -25,7 +25,7 @@
                 <div class="my-3 p-3 bg-body rounded shadow-sm">
                     <!-- FORM PENCARIAN -->
                     <div class="pb-3">
-                        <form class="d-flex" action="{{ url('pengeluaran') }}" method="get">
+                        <form class="d-flex" action="{{ url('pendapatan') }}" method="get">
                             <input class="form-control me-1" type="search" name="katakunci"
                                 value="{{ Request::get('katakunci') }}" placeholder="Masukkan kata kunci"
                                 aria-label="Search">
@@ -35,7 +35,7 @@
 
                     <!-- TOMBOL TAMBAH DATA -->
                     <div class="pb-3">
-                        <a href='{{ url('pengeluaran/create') }}' class="btn btn-primary">+ Tambah Data</a>
+                        <a href='{{ url('pendapatan/create') }}' class="btn btn-primary">+ Tambah Data</a>
                     </div>
 
                     <table class="table table-striped">
@@ -43,7 +43,8 @@
                             <tr>
                                 <th class="col-md-1">No</th>
                                 <th class="col-md-2">Tanggal</th>
-                                <th class="col-md-3">Harga Pakan</th>
+                                <th class="col-md-1">Jumlah</th>
+                                <th class="col-md-2">Harga</th>
                                 <th class="col-md-3">Catatan</th>
                                 <th class="col-md-2"></th>
                             </tr>
@@ -54,13 +55,14 @@
                                 <tr>
                                     <td> {{ $i }}</td>
                                     <td>{{ $item->tanggal }}</td>
-                                    <td>{{ $item->harga_pakan }}</td>
+                                    <td>{{ $item->jumlah }}</td>
+                                    <td>{{ $item->harga }}</td>
                                     <td>{{ $item->catatan }}</td>
                                     <td>
-                                        <a href='{{ url('pengeluaran/' . $item->id . '/edit') }}'
+                                        <a href='{{ url('pendapatan/' . $item->id . '/edit') }}'
                                             class="btn btn-warning btn-sm">Edit</a>
                                         <form onsubmit="return confirm('Yakin akan menghapus data?')" class="d-inline"
-                                            action="{{ url('pengeluaran/' . $item->id) }}" method="post">
+                                            action="{{ url('pendapatan/' . $item->id) }}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm">Del</button>

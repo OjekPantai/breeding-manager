@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pengeluaranController;
+use App\Http\Controllers\pendapatanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,7 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::get('/pengeluaran', [pengeluaranController::class, 'index'])->name('pengeluaran');
+// Route::get('/pengeluaran', [pengeluaranController::class, 'index'])->name('pengeluaran');
 
 Route::resource('/pengeluaran', pengeluaranController::class);
+Route::resource('/pendapatan', pendapatanController::class);

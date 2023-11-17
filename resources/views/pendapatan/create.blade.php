@@ -1,10 +1,10 @@
 @extends('layouts.template')
 @section('content')
     <!-- START FORM -->
-    <form action='{{ url('pengeluaran') }}' method='post'>
+    <form action='{{ url('pendapatan') }}' method='post'>
         @csrf
         <div class="my-3 p-3 bg-body rounded shadow-sm">
-            <a href="{{ url('pengeluaran') }}" class="btn btn-secondary">
+            <a href="{{ url('pendapatan') }}" class="btn btn-secondary">
                 < Kembali</a>
                     <div class="mb-3 row">
                         <label for="tanggal" class="col-sm-2 col-form-label">Tanggal</label>
@@ -14,10 +14,17 @@
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="harga_pakan" class="col-sm-2 col-form-label">Harga Pakan</label>
+                        <label for="tanggal" class="col-sm-2 col-form-label">Jumlah</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name='harga_pakan'
-                                value="{{ Session::get('harga_pakan') }}" id="harga_pakan">
+                            <input type="number" class="form-control" name='jumlah' value="{{ Session::get('jumlah') }}"
+                                id="jumlah">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="harga" class="col-sm-2 col-form-label">Harga</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name='harga' value="{{ Session::get('harga') }}"
+                                id="harga">
                         </div>
                     </div>
                     <div class="mb-3 row">
