@@ -98,21 +98,20 @@
                                 </p>
                             </a>
                         </li>
-                        {{-- NAV MENU DIBAWAH DASHBOARD --}}
-                        <li class="nav-header">FEATURE</li>
+                        <li class="nav-header">OWNER</li>
                         <li class="nav-item">
-                            <a href="/pengeluaran" class="nav-link">
+                            <a href="/pendapatan_admin" class="nav-link">
                                 <i class="nav-icon fas fa-money-bill-wave"></i>
                                 <p>
-                                    Pengeluaran Mitra
+                                    Pendapatan Owner
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/pendapatan" class="nav-link">
-                                <i class="nav-icon fas fa-book"></i>
+                            <a href="/pendapatan_admin" class="nav-link">
+                                <i class="nav-icon fas fa-money-bill-wave"></i>
                                 <p>
-                                    Pendapatan Mitra
+                                    Pengeluaran Owner
                                 </p>
                             </a>
                         </li>
@@ -132,6 +131,25 @@
                                 </p>
                             </a>
                         </li>
+                        {{-- NAV MENU DIBAWAH DASHBOARD --}}
+                        <li class="nav-header">MITRA</li>
+                        <li class="nav-item">
+                            <a href="/pengeluaran" class="nav-link">
+                                <i class="nav-icon fas fa-money-bill-wave"></i>
+                                <p>
+                                    Pengeluaran Mitra
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/pendapatan" class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Pendapatan Mitra
+                                </p>
+                            </a>
+                        </li>
+
                         {{-- <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
