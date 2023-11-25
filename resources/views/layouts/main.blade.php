@@ -116,7 +116,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/pengeluaran" class="nav-link">
+                            <a href="/monitoring" class="nav-link">
                                 <i class="nav-icon fas fa-chart-line"></i>
                                 <p>
                                     Monitoring
@@ -124,7 +124,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/pengeluaran" class="nav-link">
+                            <a href="/treatment" class="nav-link">
                                 <i class="nav-icon fas fa-prescription-bottle-alt"></i>
                                 <p>
                                     Treatment
