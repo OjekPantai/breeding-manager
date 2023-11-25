@@ -53,7 +53,7 @@
                             <?php $i = $data->firstItem(); ?>
                             @foreach ($data as $item)
                                 <tr>
-                                    <td> {{ $i }}</td>
+                                    {{-- <td> {{ $i }}</td> --}}
                                     <td>{{ $item->batch }}</td>
                                     <td>{{ $item->jenis_pejantan }}</td>
                                     <td>{{ $item->jenis_betina }}</td>
