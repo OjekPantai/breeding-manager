@@ -34,10 +34,10 @@
     <div class="wrapper">
 
         <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
+        {{-- <div class="preloader flex-column justify-content-center align-items-center">
             <img class="animation__shake" src="{{ asset('lte/dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo"
                 height="60" width="60">
-        </div>
+        </div> --}}
 
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -75,7 +75,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
+            <a href="/" class="brand-link">
                 <img src="{{ asset('lte/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">BREEDING MANAGER</span>
@@ -91,7 +91,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
-                            <a href="/" class="nav-link active">
+                            <a href="/" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -108,7 +108,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/pendapatan_admin" class="nav-link">
+                            <a href="/pengeluaran_admin" class="nav-link">
                                 <i class="nav-icon fas fa-money-bill-wave"></i>
                                 <p>
                                     Pengeluaran Owner
@@ -135,7 +135,7 @@
                         <li class="nav-header">MITRA</li>
                         <li class="nav-item">
                             <a href="/pengeluaran" class="nav-link">
-                                <i class="nav-icon fas fa-money-bill-wave"></i>
+                                <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Pengeluaran Mitra
                                 </p>
@@ -751,6 +751,7 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
+
         @include('components.message')
         @yield('content')
         <!-- /.content-wrapper -->

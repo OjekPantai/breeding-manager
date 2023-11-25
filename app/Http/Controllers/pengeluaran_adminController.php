@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\pengeluaran_admin;
 use Illuminate\Http\Request;
-use App\Models\pendapatan_admin;
 use Illuminate\Support\Facades\Session;
 
-class pendapatan_adminController extends Controller
+class pengeluaran_adminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,16 +16,16 @@ class pendapatan_adminController extends Controller
         $katakunci = $request->katakunci;
         $jumlahbaris = 5;
         if (strlen($katakunci)) {
-            $data = pendapatan_admin::where('catatan', 'like', "%$katakunci%")
-                ->orWhere('tanggal', 'like', "%$katakunci%")
-                ->orWhere('jumlah', 'like', "%$katakunci%")
+            $data = pengeluaran_admin::where('catatan', 'like', "%$katakunci%")
+                ->orWhere('jenis', 'like', "%$katakunci%")
+                ->orWhere('mitra', 'like', "%$katakunci%")
                 ->orWhere('harga', 'like', "%$katakunci%")
                 ->paginate($jumlahbaris);
         } else {
 
-            $data = pendapatan_admin::orderBy('tanggal', 'desc')->paginate($jumlahbaris);
+            $data = pengeluaran_admin::orderBy('mitra', 'desc')->paginate($jumlahbaris);
         }
-        return view('pendapatan_admin.index')->with('data', $data);
+        return view('pengeluaran_admin.index')->with('data', $data);
     }
 
     /**
@@ -33,7 +33,7 @@ class pendapatan_adminController extends Controller
      */
     public function create()
     {
-        return view('pendapatan_admin.create');
+        return view('pengeluaran_admin.create');
     }
 
     /**
@@ -41,30 +41,30 @@ class pendapatan_adminController extends Controller
      */
     public function store(Request $request)
     {
-        Session::flash('tanggal', $request->tanggal);
-        Session::flash('jumlah', $request->jumlah);
+        Session::flash('jenis', $request->jenis);
+        Session::flash('mitra', $request->mitra);
         Session::flash('harga', $request->harga);
         Session::flash('catatan', $request->catatan);
 
         $request->validate([
-            'tanggal' => 'required',
-            'jumlah' => 'required',
+            'jenis' => 'required',
+            'mitra' => 'required',
             'harga' => 'required',
             'catatan' => 'required'
         ], [
-            'tanggal.required' => 'Tanggal wajib di isi',
-            'jumlah.required' => 'Jumlah wajib di isi',
+            'jenis.required' => 'Jenis wajib di isi',
+            'mitra.required' => 'Mitra wajib di isi',
             'harga.required' => 'Harga pakan wajib di isi',
             'catatan.required' => 'Catatan wajib di isi',
         ]);
         $data = [
-            'tanggal' => $request->tanggal,
-            'jumlah' => $request->jumlah,
+            'jenis' => $request->jenis,
+            'mitra' => $request->mitra,
             'harga' => $request->harga,
             'catatan' => $request->catatan,
         ];
-        pendapatan_admin::create($data);
-        return redirect()->to('pendapatan_admin')->with('success', 'Berhasil menambahkan data');
+        pengeluaran_admin::create($data);
+        return redirect()->to('pengeluaran_admin')->with('success', 'Berhasil menambahkan data');
     }
 
     /**
@@ -80,8 +80,8 @@ class pendapatan_adminController extends Controller
      */
     public function edit(string $id)
     {
-        $data = pendapatan_admin::where('id', $id)->first();
-        return view('pendapatan_admin.edit')->with('data', $data);
+        $data = pengeluaran_admin::where('id', $id)->first();
+        return view('pengeluaran_admin.edit')->with('data', $data);
     }
 
     /**
@@ -90,21 +90,24 @@ class pendapatan_adminController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'jumlah' => 'required',
             'harga' => 'required',
-            'catatan' => 'required'
+            'jenis' => 'required',
+            'catatan' => 'required',
+            'mitra' => 'required',
         ], [
-            'jumlah.required' => 'Jumlah pakan wajib di isi',
             'harga.required' => 'Harga pakan wajib di isi',
+            'jenis.required' => 'Jenis wajib di isi',
             'catatan.required' => 'Catatan wajib di isi',
+            'mitra.required' => 'Mitra wajib di isi',
         ]);
         $data = [
-            'jumlah' => $request->jumlah,
             'harga' => $request->harga,
+            'jenis' => $request->jenis,
             'catatan' => $request->catatan,
+            'mitra' => $request->mitra,
         ];
-        pendapatan_admin::where('id', $id)->update($data);
-        return redirect()->to('pendapatan_admin')->with('success', 'Berhasil update');
+        pengeluaran_admin::where('id', $id)->update($data);
+        return redirect()->to('pengeluaran_admin')->with('success', 'Berhasil update');
     }
 
     /**
@@ -112,7 +115,7 @@ class pendapatan_adminController extends Controller
      */
     public function destroy(string $id)
     {
-        pendapatan_admin::where('id', $id)->delete();
-        return redirect()->to('pendapatan_admin')->with('success', 'Data telah dihapus');
+        pengeluaran_admin::where('id', $id)->delete();
+        return redirect()->to('pengeluaran_admin')->with('success', 'Data telah dihapus');
     }
 }

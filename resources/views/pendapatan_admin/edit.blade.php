@@ -1,11 +1,11 @@
 @extends('layouts.template')
 @section('content')
     <!-- START FORM -->
-    <form action='{{ url('pendapatan/' . $data->id) }}' method='post'>
+    <form action='{{ url('pendapatan_admin/' . $data->id) }}' method='post'>
         @csrf
         @method('PUT')
         <div class="my-3 p-3 bg-body rounded shadow-sm">
-            <a href="{{ url('pendapatan') }}" class="btn btn-secondary">
+            <a href="{{ url('pendapatan_admin') }}" class="btn btn-secondary">
                 < Kembali</a>
                     <div class="mb-3 row">
                         <label for="tanggal" class="col-sm-2 col-form-label">Tanggal</label>
@@ -13,12 +13,16 @@
                             {{ $data->tanggal }}
                         </div>
                     </div>
+
+
                     <div class="mb-3 row">
                         <label for="jumlah" class="col-sm-2 col-form-label">Jumlah</label>
                         <div class="col-sm-10">
-                            {{ $data->jumlah }}
+                            <input type="text" class="form-control" name='jumlah' value="{{ $data->jumlah }}"
+                                id="jumlah">
                         </div>
                     </div>
+
                     <div class="mb-3 row">
                         <label for="harga" class="col-sm-2 col-form-label">Harga</label>
                         <div class="col-sm-10">
@@ -26,6 +30,7 @@
                                 id="harga">
                         </div>
                     </div>
+
                     <div class="mb-3 row">
                         <label for="catatan" class="col-sm-2 col-form-label">Catatan</label>
                         <div class="col-sm-10">

@@ -1,10 +1,10 @@
 @extends('layouts.template')
 @section('content')
     <!-- START FORM -->
-    <form action='{{ url('pendapatan') }}' method='post'>
+    <form action='{{ url('pendapatan_admin') }}' method='post'>
         @csrf
         <div class="my-3 p-3 bg-body rounded shadow-sm">
-            <a href="{{ url('pendapatan') }}" class="btn btn-secondary">
+            <a href="{{ url('pendapatan_admin') }}" class="btn btn-secondary">
                 < Kembali</a>
                     <div class="mb-3 row">
                         <label for="tanggal" class="col-sm-2 col-form-label">Tanggal</label>
