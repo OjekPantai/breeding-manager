@@ -115,14 +115,6 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="/monitoring" class="nav-link">
-                                <i class="nav-icon fas fa-chart-line"></i>
-                                <p>
-                                    Monitoring
-                                </p>
-                            </a>
-                        </li>
 
                         {{-- NAV MENU DIBAWAH DASHBOARD --}}
                         <li class="nav-header">MITRA</li>
@@ -147,6 +139,14 @@
                                 <i class="nav-icon fas fa-prescription-bottle-alt"></i>
                                 <p>
                                     Treatment
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/monitoring" class="nav-link">
+                                <i class="nav-icon fas fa-chart-line"></i>
+                                <p>
+                                    Monitoring
                                 </p>
                             </a>
                         </li>
