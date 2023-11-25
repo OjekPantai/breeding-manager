@@ -11,7 +11,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v1</li>
+
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -27,8 +27,8 @@
                         <div class="card">
                             <div class="card-header border-0">
                                 <div class="d-flex justify-content-between">
-                                    <h3 class="card-title">Online Store Visitors</h3>
-                                    <a href="javascript:void(0);">View Report</a>
+                                    <h3 class="card-title">Total pendapatan owner</h3>
+                                    <a href="/">View Report</a>
                                 </div>
                             </div>
                             <div class="card-body">
