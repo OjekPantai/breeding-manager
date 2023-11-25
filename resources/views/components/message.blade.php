@@ -2,7 +2,7 @@
     <div class="container">
         <div class="alert alert-success alert-dismissible pt-3">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <h5><i class="icon fas fa-check"></i> Alert!</h5>
+            <h5><i class="icon fas fa-check"></i>Berhasil!</h5>
             {{ Session::get('success') }}
         </div>
     </div>

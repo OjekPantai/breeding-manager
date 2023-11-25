@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BREEDING MANAGER</title>
+    <title>Breeding Management</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -12,7 +12,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('lte/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
-    {{-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> --}}
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
     <link rel="stylesheet"
         href="{{ asset('lte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
@@ -73,19 +73,19 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <aside class="main-sidebar sidebar-light-primary elevation-4">
             <!-- Brand Logo -->
             <a href="/" class="brand-link">
-                <img src="{{ asset('lte/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">BREEDING MANAGER</span>
+                <img src="{{ asset('lte/dist/img/logo.jpg') }}" alt="Logo"
+                    class="brand-image img-circle elevation-3 ml-1" style="opacity: .85">
+                <span class="brand-text font-weight-heavy">Breeding Management</span>
             </a>
 
             <!-- Sidebar -->
             <div class="sidebar">
 
                 <!-- Sidebar Menu -->
-                <nav class="mt-2">
+                <nav class="mt-4">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
@@ -127,18 +127,18 @@
                         {{-- NAV MENU DIBAWAH DASHBOARD --}}
                         <li class="nav-header">MITRA</li>
                         <li class="nav-item">
-                            <a href="/pengeluaran" class="nav-link">
-                                <i class="nav-icon fas fa-book"></i>
-                                <p>
-                                    Pengeluaran Mitra
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a href="/pendapatan" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Pendapatan Mitra
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/pengeluaran" class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Pengeluaran Mitra
                                 </p>
                             </a>
                         </li>
@@ -752,16 +752,10 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-
-        @include('components.message')
         @yield('content')
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.2.0
-            </div>
+            @include('components.message')
         </footer>
 
         <!-- Control Sidebar -->
