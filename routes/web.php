@@ -6,6 +6,7 @@ use App\Http\Controllers\pendapatanController;
 use App\Http\Controllers\pendapatan_adminController;
 use App\Http\Controllers\pengeluaran_adminController;
 use App\Http\Controllers\monitoringController;
+use App\Http\Controllers\treatmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,4 @@ Route::resource('/pendapatan', pendapatanController::class);
 Route::resource('/pendapatan_admin', pendapatan_adminController::class);
 Route::resource('/pengeluaran_admin', pengeluaran_adminController::class);
 Route::resource('/monitoring', monitoringController::class);
+Route::resource('/treatment', treatmentController::class);

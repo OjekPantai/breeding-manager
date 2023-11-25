@@ -123,14 +123,7 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="/treatment" class="nav-link">
-                                <i class="nav-icon fas fa-prescription-bottle-alt"></i>
-                                <p>
-                                    Treatment
-                                </p>
-                            </a>
-                        </li>
+
                         {{-- NAV MENU DIBAWAH DASHBOARD --}}
                         <li class="nav-header">MITRA</li>
                         <li class="nav-item">
@@ -146,6 +139,14 @@
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Pendapatan Mitra
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/treatment" class="nav-link">
+                                <i class="nav-icon fas fa-prescription-bottle-alt"></i>
+                                <p>
+                                    Treatment
                                 </p>
                             </a>
                         </li>
